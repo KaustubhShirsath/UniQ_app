@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //import 'signup.dart';
@@ -26,22 +27,22 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        resizeToAvoidBottomPadding: false,
-        body: Column(
+      resizeToAvoidBottomPadding: false,
+      body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               child: Stack(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.fromLTRB(15.0, 90.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(15.0, 70.0, 0.0, 0.0),
                     alignment: Alignment.center,
                     child: Text('Create an',
                         style: TextStyle(
                             fontSize: 30.0, fontWeight: FontWeight.bold)),
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(16.0, 130.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(16.0, 110.0, 0.0, 0.0),
                     alignment: Alignment.center,
                     child: Text('Account',
                         style: TextStyle(
@@ -57,9 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       height: 45.0,
                       child: Material(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.grey,
-                          elevation: 7.0,
+                          borderRadius: BorderRadius.circular(40.0),
+                          color: Colors.black12,
+                          elevation: 0.0,
                           child: TextField(
                             decoration: InputDecoration(
                               icon: Icon(Icons.person),
@@ -71,13 +72,13 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           )),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 30.0),
                     Container(
                       height: 45.0,
                       child: Material(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.grey,
-                          elevation: 7.0,
+                          borderRadius: BorderRadius.circular(40.0),
+                          color: Colors.black12,
+                          elevation: 0.0,
                           child: TextField(
                             decoration: InputDecoration(
                               icon: Icon(Icons.keyboard_hide),
@@ -90,13 +91,13 @@ class _MyHomePageState extends State<MyHomePage> {
                             //obscureText: true,
                           )),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 30.0),
                     Container(
                       height: 45.0,
                       child: Material(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.grey,
-                          elevation: 7.0,
+                          borderRadius: BorderRadius.circular(40.0),
+                          color: Colors.black12,
+                          elevation: 0.0,
                           child: TextField(
                             decoration: InputDecoration(
                               icon: Icon(Icons.keyboard_hide),
@@ -109,14 +110,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             //obscureText: true,
                           )),
                     ),
-                    SizedBox(height: 40.0),
+                    SizedBox(height: 45.0),
                     Container(
                       height: 40.0,
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.purpleAccent,
+                        shadowColor: Colors.black12,
                         color: Colors.purple,
-                        elevation: 7.0,
+                        elevation: 2.0,
                         child: GestureDetector(
                           onTap: () {},
                           child: Center(
@@ -172,11 +173,69 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontFamily: 'Montserrat'),
               ),
             ),
-            SizedBox(height: 10.0),
+            //SizedBox(height: 10.0),
             Row(
-              
-            )
-          ],
-        ));
+              children: <Widget>[
+                Expanded(child: getImageAsset1()),
+                Expanded(child: getImageAsset2()),
+                Expanded(child: getImageAsset3()),
+              ],
+            ),
+            Container(
+              alignment: Alignment.center,
+              child: Text(
+                'Made in India',
+                style: TextStyle(fontFamily: 'Montserrat'),
+              ),
+            ),
+          ]),
+    );
+  }
+
+  Widget getImageAsset1() {
+    AssetImage assetImage = AssetImage('images/FBIcon.png');
+    Image image = Image(
+      image: assetImage,
+      width: 70.0,
+      height: 70.0,
+
+      color: Colors.black54,
+    );
+    return Container(
+      child: image,
+      margin: EdgeInsets.all(50),
+    );
+  }
+
+  Widget getImageAsset2() {
+    AssetImage assetImage = AssetImage('images/GoogleIcon.png');
+    Image image = Image(
+      image: assetImage,
+      width: 70.0,
+      height: 70.0,
+      color: Colors.black54,
+    );
+    return Container(
+      child: image,
+      margin: EdgeInsets.all(50),
+    );
+  }
+
+  Widget getImageAsset3() {
+    AssetImage assetImage = AssetImage('images/InstaIcon.png');
+    Image image = Image(
+      image: assetImage,
+      width: 70.0,
+      height: 70.0,
+      color: Colors.black54,
+    );
+    return Container(
+      child: image,
+      margin: EdgeInsets.all(50),
+    );
   }
 }
+/* alignment: Alignment.center,
+              child: Text(
+                'Signup with',
+                style: TextStyle(fontFamily: 'Montserrat'),*/
